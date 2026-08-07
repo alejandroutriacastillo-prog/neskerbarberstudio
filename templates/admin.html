@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Citas - Nesker Barber</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- PANTALLA DE LOGIN (Visible por defecto)      -->
+    <!-- ========================================== -->
+    <div id="login-container" class="login-wrapper">
+        <div class="login-card">
+            <h2>🔐 ADMINISTRACIÓN</h2>
+            <form id="form-login">
+                <div class="form__input-container" style="margin-bottom: 15px;">
+                    <label for="password-admin" style="color: #c5a059; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;">Contraseña</label>
+                    <input type="password" id="password-admin" placeholder="Introduce la clave" required style="width: 100%; padding: 12px; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(197, 160, 89, 0.2); border-radius: 8px; color: #fff; box-sizing: border-box; outline: none;">
+                </div>
+                <button type="submit" class="submit-button" style="width: 100%; padding: 13px; background: linear-gradient(135deg, #c5a059 0%, #dfbc71 100%); border: none; border-radius: 8px; color: #0b0b0e; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; cursor: pointer;">Acceder</button>
+                <div id="login-error" style="color: #fca5a5; font-size: 0.8rem; text-align: center; margin-top: 10px; display: none;">
+                    ❌ Contraseña incorrecta
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- PANEL DE CONTROL (Oculto hasta hacer login)  -->
+    <!-- ========================================== -->
+    <div id="admin-panel" style="display: none;">
+        <div class="table-container">
+            <h1>✂️--- CITAS ---✂️</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Fecha Hora</th>
+                        <th>Borrar</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-citas">
+                    <!-- Se rellenará con JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- SECCIÓN PARA GESTIONAR BLOQUEOS / VACACIONES -->
+        <div class="panel-bloqueos">
+            <h3>📅 Gestión de Vacaciones y Cierres</h3>
+            <p>Bloquea un rango de días completos (ej: vacaciones o baja médica prolongada) para que no se pueda reservar.</p>
+            
+            <form id="form-bloqueo" class="form-bloqueo-grid">
+                <div class="campo-bloqueo">
+                    <label for="fecha-inicio">Desde el día:</label>
+                    <input type="date" id="fecha-inicio" required>
+                </div>
+                <div class="campo-bloqueo">
+                    <label for="fecha-fin">Hasta el día:</label>
+                    <input type="date" id="fecha-fin" required>
+                </div>
+                <div class="campo-bloqueo">
+                    <label for="motivo-bloqueo">Motivo:</label>
+                    <input type="text" id="motivo-bloqueo" value="Vacaciones" placeholder="Ej: Vacaciones, Baja...">
+                </div>
+                <div>
+                    <button type="submit" class="btn-bloquear">
+                        🚫 Bloquear Periodo
+                    </button>
+                </div>
+            </form>
+
+            <h4 class="titulo-lista-bloqueos">Periodos y días bloqueados:</h4>
+            <ul id="lista-bloqueos">
+                <!-- Aquí se cargarán dinámicamente los bloqueos -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="/static/js/admin.js"></script>
+</body>
+</html>

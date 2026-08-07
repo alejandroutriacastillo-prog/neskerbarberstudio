@@ -1,0 +1,212 @@
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: #0f172a; /* Fondo azul oscuro moderno */
+    color: #f1f5f9; 
+    padding: 15px; 
+    margin: 0; 
+}
+
+h1 { 
+    color: #38bdf8; /* Azul claro brillante */
+    text-align: center; 
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.table-container { 
+    max-width: 800px; 
+    margin: 20px auto; 
+    background: #1e293b; /* Tarjeta gris-azulada más limpia */
+    padding: 15px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4); 
+    overflow-x: auto; 
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 10px; 
+    min-width: 450px; 
+}
+
+th, td { 
+    padding: 12px 10px; 
+    border-bottom: 1px solid #334155; 
+    text-align: left; 
+    font-size: 0.9rem;
+}
+
+th { 
+    background: #0f172a; 
+    color: #38bdf8; 
+    font-weight: 600;
+}
+
+tr:hover { 
+    background: #273548; 
+}
+
+.no-citas { 
+    text-align: center; 
+    color: #94a3b8; 
+    padding: 20px; 
+}
+
+/* ========================================== */
+/* PANEL DE BLOQUEOS                          */
+/* ========================================== */
+
+.panel-bloqueos {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.panel-bloqueos h3 {
+    color: #38bdf8;
+    margin-top: 0;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.panel-bloqueos p {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.form-bloqueo-grid {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.campo-bloqueo {
+    flex: 1;
+    min-width: 100%; 
+}
+
+.campo-bloqueo label {
+    display: block;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    margin-bottom: 6px;
+}
+
+.campo-bloqueo input {
+    width: 100%;
+    padding: 10px;
+    background: #0f172a;
+    border: 1px solid #475569;
+    border-radius: 6px;
+    color: #f1f5f9;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+}
+
+.campo-bloqueo input:focus {
+    border-color: #38bdf8;
+    outline: none;
+}
+
+.btn-bloquear {
+    background: #ef4444; /* Rojo moderno de alerta */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 600;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.btn-bloquear:hover {
+    background: #dc2626;
+}
+
+.titulo-lista-bloqueos {
+    color: #38bdf8;
+    font-size: 0.95rem;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 8px;
+}
+
+#lista-bloqueos {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lista-bloqueos li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 8px;
+    border-bottom: 1px solid #334155;
+    color: #f1f5f9;
+    font-size: 0.85rem;
+    gap: 10px;
+}
+
+#lista-bloqueos li:hover {
+    background: #273548;
+    border-radius: 6px;
+}
+
+#lista-bloqueos button {
+    background: #334155;
+    color: #38bdf8;
+    border: 1px solid #475569;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+#lista-bloqueos button:hover {
+    background: #475569;
+    color: #fff;
+}
+
+/* ========================================== */
+/* MEDIA QUERIES PARA PANTALLAS MÁS GRANDES   */
+/* ========================================== */
+
+@media (min-width: 600px) {
+    body {
+        padding: 20px;
+    }
+
+    .table-container, .panel-bloqueos {
+        padding: 20px;
+    }
+
+    .campo-bloqueo {
+        min-width: 200px; 
+    }
+
+    .btn-bloquear {
+        width: auto;
+    }
+
+    th, td {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    #lista-bloqueos li {
+        font-size: 0.95rem;
+        padding: 12px;
+    }
+}
